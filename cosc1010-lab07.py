@@ -1,4 +1,4 @@
-# Your Name Here
+# Jack Zweibelson
 # UWYO COSC 1010
 # Submission Date
 # Lab XX
@@ -17,9 +17,19 @@
     # If a user did not enter a number output a statement saying so
 # You will continue to prompt the user until a proper integer value is entered
 
-factorial = 1
 
-print(f"The result of the factorial based on the given bound is {factorial}")
+num = input("Give me an integer: ")
+x = 1
+if num.isdigit():
+    y = int(num)
+    while y != 0:
+        x *= y
+        y -=1
+else:
+    print("Please input a integer.")
+
+
+print(f"The result of the factorial based on the given bound is {x}")
 
 print("*"*75)
 # Create a while loop that prompts a user for input of an integer values
@@ -37,7 +47,17 @@ print("*"*75)
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
 
-num_sum = 0 
+x = True
+num_sum = 0
+while x:
+    y = input("Give me a number to sum together. Type 'exit' to sum. ")
+    if y[0] == "-":
+        if y[1:].isdigit():
+            num_sum += int(y)
+    if y.isdigit():
+            num_sum += int(y)
+    elif y.lower() == "exit":
+        break
 
 print(f"Your final sum is {num_sum}")
 
@@ -59,4 +79,36 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
-        
+
+while True:
+     x = 0
+     num1 = ""
+     num2 = ""
+     op = None
+     y = input("Give me a math problem: ")
+     if y.strip().lower() == "exit":
+          break
+     for i in y:
+        if i.isdigit():
+            if op is None:
+                num1 += i
+            else:
+                num2 += i
+        elif i in "+-/*":
+            op = i
+        elif i != " ":
+            print("Not a math related item. ")
+            break
+     else:
+        if op == "+":
+            print(int(num1) + int(num2))
+        if op == "-":
+            print(int(num1) - int(num2))
+        if op == "/":
+            if int(num2) != 0:
+                print(int(num1) / int(num2))
+            else:
+                print("No dividing by zero")
+        if op == "*":
+            print(int(num1) * int(num2))
+

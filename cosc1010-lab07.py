@@ -1,8 +1,8 @@
 # Jack Zweibelson
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# Submission Date: 10/30/2024
+# Lab canceled?
+# Lab Section: canceled?
 # Sources, people worked with, help given to: 
 # your
 # comments

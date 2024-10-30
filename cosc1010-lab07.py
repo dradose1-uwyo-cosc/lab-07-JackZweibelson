@@ -18,15 +18,24 @@
 # You will continue to prompt the user until a proper integer value is entered
 
 
-num = input("Give me an integer: ")
+
 x = 1
-if num.isdigit():
-    y = int(num)
-    while y != 0:
-        x *= y
-        y -=1
-else:
-    print("Please input a integer.")
+while True:
+    nums = input("Give me an integer: ")
+    num = nums.strip()
+    if num[0] == "-":
+        print("Only positive integers please.")
+    else:
+        if num.isdigit():
+            y = int(num)
+            while y != 0:
+                x *= y
+                y -=1
+            else:
+                break
+        else:
+            print("Please input a integer.")
+            continue
 
 
 print(f"The result of the factorial based on the given bound is {x}")
@@ -46,7 +55,6 @@ print("*"*75)
     # I recommend checking out: https://www.w3schools.com/python/ref_string_replace.asp to figure out how one may remove a character from a string
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
-
 x = True
 num_sum = 0
 while x:
